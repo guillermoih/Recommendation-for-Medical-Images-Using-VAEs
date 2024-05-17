@@ -1,0 +1,69 @@
+{
+    "json_path": "./config.json",
+    "PATHS": {
+        "IMAGES_PATH": "",
+        "LOG_PATH": "",
+        "HIGH_RES_IMAGES_PATH": ""
+    },
+    "model": {
+        "filters_encoder": [
+            16,
+            32,
+            64,
+            128,
+            256
+        ],
+        "filters_decoder": [
+            256,
+            128,
+            64,
+            32,
+            16
+        ],
+        "classifier_perceptron": [
+            64
+        ],
+        "latent_dim": 500
+    },
+    "train": {
+        "val_perc": 0.1,
+        "batch_size": 8,
+        "n_epochs": 51,
+        "conf_mat_samples": 500,
+        "loss_weights": {
+            "rec": 1,
+            "class": 1
+        },
+        "learning_rate": 0.001,
+        "undersampling": false
+    },
+    "experiment": "padchest",
+    "padchest": {
+        "label_list": [
+            "cardiomegaly",
+            "aortic elongation",
+            "scoliosis",
+            "normal"
+        ],
+        "label_names": {
+            "normal": 3,
+            "scoliosis": 2,
+            "cardiomegaly": 0,
+            "aortic elongation": 1
+        },
+        "folder_num": 21,
+        "image": {
+            "img_height": 224,
+            "img_width": 224,
+            "img_channels": 1
+        },
+        "pixel_depth": 256
+    },
+    "brats": {
+        "image": {
+            "img_height": 240,
+            "img_width": 240,
+            "img_channels": 4
+        }
+    }
+}
